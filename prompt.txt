@@ -1,0 +1,11 @@
+Je veux developper un site web personnel sur lequel je publie tout mes plugins pour claude (agents voire meme team, skills, commande, etc...) C'est l'idée de base. Je veux des fiche très détaillé. On mise tout sur le coté ludique accessible. Chacun de mes agent a un nom humains associé a une expertise, exemple :
+Lino - UI/UX Designer : Apporte un compte rendu complet sur l'ux de l'app/site.
+On integrera plus tard les agents et skills pour l'instant invente. Je veux un code couleur pour le type d'agents : Les devs frontend en jaune orangé "gold" et les devs backend en bleu "moderne". Je vois bien un vert pour la sécurité et les debugs en gris. Si tu as d'autre idées d'expertise tu peu en ajouter et en inventer.
+
+Un système similaire pour les skills mais moins personnifier du coup mais on peut garder le code couleur. les commande, il faudra le gerer aussi.
+
+Dans un premier temps il faut etudier l'idée avec art-direction afin de reflechir à un site signature mais orinenté dev grand public. Micode, etc... Ensuite utiliser impeccable pour rediger tout les fichiers nessecaire pour la suite.
+
+Pose moi toutes les questions nessecaire pour cadrer la suite dès que tu as un questionnement pour une feature demande moi. On fait un site hyper haute qualité et pro.
+
+Utilise les agents pour l'implementation. Le skill taste design me semble très bien mais il faudra que tu card un theme propre type discord, figma, dribbble. ui darkmode par défaut avec accent jaune orangé et label coloré. L'ui doit faire moderne.
