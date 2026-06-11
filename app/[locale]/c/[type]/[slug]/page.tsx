@@ -346,23 +346,12 @@ export default async function DetailPage({ params }: Props) {
                       download
                       className={cn(
                         "inline-flex items-center gap-2 text-sm font-medium transition-all duration-150",
+                        "bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-[var(--color-accent-fg)]",
                         "focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-2"
                       )}
                       style={{
-                        backgroundColor: "var(--color-accent)",
-                        color: "var(--color-accent-fg)",
                         borderRadius: "var(--radius-sm)",
                         padding: "8px 16px",
-                      }}
-                      onMouseEnter={(e) => {
-                        (
-                          e.currentTarget as HTMLAnchorElement
-                        ).style.backgroundColor = "var(--color-accent-hover)";
-                      }}
-                      onMouseLeave={(e) => {
-                        (
-                          e.currentTarget as HTMLAnchorElement
-                        ).style.backgroundColor = "var(--color-accent)";
                       }}
                     >
                       <Download size={14} strokeWidth={1.75} aria-hidden />
@@ -375,27 +364,14 @@ export default async function DetailPage({ params }: Props) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
-                        "inline-flex items-center gap-2 text-sm border border-[var(--color-border)] transition-colors duration-150",
+                        "inline-flex items-center gap-2 text-sm transition-colors duration-150",
+                        "border border-[var(--color-border)] hover:border-[var(--color-border-strong)]",
+                        "text-[var(--color-text-muted)] hover:text-[var(--color-text)]",
                         "focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-2"
                       )}
                       style={{
-                        color: "var(--color-text-muted)",
                         borderRadius: "var(--radius-sm)",
                         padding: "8px 16px",
-                      }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLAnchorElement).style.color =
-                          "var(--color-text)";
-                        (
-                          e.currentTarget as HTMLAnchorElement
-                        ).style.borderColor = "var(--color-border-strong)";
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLAnchorElement).style.color =
-                          "var(--color-text-muted)";
-                        (
-                          e.currentTarget as HTMLAnchorElement
-                        ).style.borderColor = "var(--color-border)";
                       }}
                     >
                       <ExternalLink size={14} strokeWidth={1.75} aria-hidden />
@@ -418,16 +394,7 @@ export default async function DetailPage({ params }: Props) {
           {prev ? (
             <Link
               href={`/${locale}/c/${prev.type}/${prev.slug}`}
-              className="flex items-center gap-2 text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)]"
-              style={{ color: "var(--color-text-muted)" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "var(--color-accent)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "var(--color-text-muted)";
-              }}
+              className="flex items-center gap-2 text-sm transition-colors duration-150 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-[var(--color-accent)]"
             >
               <ChevronLeft size={16} strokeWidth={1.75} aria-hidden />
               <span>{prev.name}</span>
@@ -438,16 +405,7 @@ export default async function DetailPage({ params }: Props) {
           {next ? (
             <Link
               href={`/${locale}/c/${next.type}/${next.slug}`}
-              className="flex items-center gap-2 text-sm transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)]"
-              style={{ color: "var(--color-text-muted)" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "var(--color-accent)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "var(--color-text-muted)";
-              }}
+              className="flex items-center gap-2 text-sm transition-colors duration-150 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-[var(--color-accent)]"
             >
               <span>{next.name}</span>
               <ChevronRight size={16} strokeWidth={1.75} aria-hidden />
