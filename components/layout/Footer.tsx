@@ -6,7 +6,9 @@ interface FooterProps {
 
 export function Footer({ locale }: FooterProps) {
   const navLinks = [
-    { href: `/${locale}/collection`, label: "Collection" },
+    { href: `/${locale}/agents`, label: "Agents" },
+    { href: `/${locale}/skills`, label: "Skills" },
+    { href: `/${locale}/commands`, label: "Commandes" },
     { href: `/${locale}/about`, label: "À propos" },
   ];
 
@@ -33,13 +35,19 @@ export function Footer({ locale }: FooterProps) {
             >
               L&apos;Index
             </span>
-            <p className="text-[13px]" style={{ color: "var(--color-text-faint)" }}>
+            <p
+              className="text-[13px]"
+              style={{ color: "var(--color-text-faint)" }}
+            >
               Catalogue de plugins Claude
             </p>
           </div>
 
           {/* Nav links */}
-          <nav className="flex items-center gap-6" aria-label="Liens de pied de page">
+          <nav
+            className="flex items-center gap-6"
+            aria-label="Liens de pied de page"
+          >
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
