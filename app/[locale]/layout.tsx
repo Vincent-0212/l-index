@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 type Props = {
   children: React.ReactNode;
@@ -30,21 +31,30 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="h-full">
-      <body className="flex min-h-full flex-col bg-[var(--color-surface-0)] text-[var(--color-ink)] antialiased">
+    <html lang={locale} className="h-full" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var m=localStorage.getItem('theme-mode');if(!m)m=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-mode',m);}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className="flex min-h-[100dvh] flex-col bg-[var(--color-bg)] text-[var(--color-text)] antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <Header
-            locale={locale}
-            messages={{
-              nav: {
-                collection: messages.nav.collection as string,
-                about: messages.nav.about as string,
-                home: messages.nav.home as string,
-              },
-            }}
-          />
-          <main className="flex-1">{children}</main>
-          <Footer locale={locale} />
+          <ThemeProvider>
+            <Header
+              locale={locale}
+              messages={{
+                nav: {
+                  collection: messages.nav.collection as string,
+                  about: messages.nav.about as string,
+                  home: messages.nav.home as string,
+                },
+              }}
+            />
+            <main className="flex-1">{children}</main>
+            <Footer locale={locale} />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

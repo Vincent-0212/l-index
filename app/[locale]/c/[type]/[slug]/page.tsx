@@ -58,7 +58,7 @@ export default async function DetailPage({ params }: Props) {
   const tb = await getTranslations("breadcrumb");
 
   const classInfo = CLASS_MAP[card.class];
-  const classColor = classInfo.color === "prismatic" ? "#a78bfa" : classInfo.color;
+  const classColor = classInfo.color;
   const ClassIcon = ICON_MAP[classInfo.icon] ?? Network;
 
   const isAgent = card.type === "agent";
@@ -179,7 +179,7 @@ export default async function DetailPage({ params }: Props) {
                       const member = getCardBySlug("agent", memberSlug);
                       if (!member || member.type !== "agent") return null;
                       const mInfo = CLASS_MAP[member.class];
-                      const mColor = mInfo.color === "prismatic" ? "#a78bfa" : mInfo.color;
+                      const mColor = mInfo.color;
                       return (
                         <Link
                           key={memberSlug}

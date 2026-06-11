@@ -22,7 +22,7 @@ interface CardMiniProps {
 export function CardMini({ card, locale, className }: CardMiniProps) {
   const classKey = card.class as ClassName;
   const classInfo = CLASS_MAP[classKey];
-  const classColor = classInfo.color === "prismatic" ? "#a78bfa" : classInfo.color;
+  const classColor = classInfo.color;
   const IconComponent = ICON_MAP[classInfo.icon] ?? Network;
 
   const isAgent = card.type === "agent";

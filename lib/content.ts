@@ -8,6 +8,10 @@ export function getAllCards(): PluginCard[] {
   return [...agents, ...skills, ...commands, ...teams];
 }
 
+export function getVisibleCards(): PluginCard[] {
+  return getAllCards().filter((c) => c.type !== "team");
+}
+
 export function getCardsByType(type: PluginCard["type"]): PluginCard[] {
   return getAllCards().filter((card) => card.type === type);
 }
@@ -29,19 +33,37 @@ export function filterCards(
   cards: PluginCard[],
   filters: FilterOptions
 ): PluginCard[] {
-  return cards.filter((card) => {
-    if (filters.type && card.type !== filters.type) return false;
-    if (filters.class && card.class !== filters.class) return false;
-    if (filters.search) {
-      const q = filters.search.toLowerCase();
-      const matchName = card.name.toLowerCase().includes(q);
-      const matchSummary = card.summary.toLowerCase().includes(q);
-      const matchRole =
-        card.type === "agent" ? card.role.toLowerCase().includes(q) : false;
-      if (!matchName && !matchSummary && !matchRole) return false;
-    }
-    return true;
-  });
+  let filtered = [...cards];
+
+  if (filters.type) {
+    filtered = filtered.filter((card) => card.type === filters.type);
+  }
+
+  if (filters.class) {
+    filtered = filtered.filter((card) => card.class === filters.class);
+  }
+
+  if (filters.search) {
+    const q = filters.search.toLowerCase();
+    filtered = filtered.filter((card) => {
+      const base = `${card.name} ${card.summary}`.toLowerCase();
+      const role =
+        card.type === "agent" ? (card.role?.toLowerCase() ?? "") : "";
+      const tags =
+        card.type !== "team" ? (card.tags?.join(" ").toLowerCase() ?? "") : "";
+      const extra =
+        card.type === "agent"
+          ? `${card.whatItDoes} ${card.whenToUse} ${card.example}`.toLowerCase()
+          : card.type === "skill"
+          ? `${card.triggers} ${card.effect}`.toLowerCase()
+          : card.type === "command"
+          ? `${card.usage} ${card.effect}`.toLowerCase()
+          : "";
+      return (base + " " + role + " " + tags + " " + extra).includes(q);
+    });
+  }
+
+  return filtered;
 }
 
 export function getAdjacentCards(
@@ -54,3 +76,9 @@ export function getAdjacentCards(
     next: idx < sameType.length - 1 ? sameType[idx + 1] : undefined,
   };
 }
+
+export const GLOBAL_INSTALL = `# Installer l'environnement complet
+npx claude-index install --all
+
+# Ou individuellement
+npx claude-index install lino theo maya sami`;
