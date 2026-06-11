@@ -46,7 +46,9 @@ export default async function LocaleLayout({ children, params }: Props) {
               locale={locale}
               messages={{
                 nav: {
-                  collection: messages.nav.collection as string,
+                  agents: messages.nav.agents as string,
+                  skills: messages.nav.skills as string,
+                  commands: messages.nav.commands as string,
                   about: messages.nav.about as string,
                   home: messages.nav.home as string,
                 },

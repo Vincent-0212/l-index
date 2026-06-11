@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 interface HeaderProps {
   locale: string;
   messages: {
-    nav: { collection: string; about: string; home: string };
+    nav: { agents: string; skills: string; commands: string; about: string; home: string };
   };
 }
 
@@ -50,12 +50,11 @@ export function Header({ locale, messages }: HeaderProps) {
     return pathname === href || pathname.startsWith(href + "/");
   }
 
-  const collectionHref = `/${locale}/collection`;
-  const aboutHref = `/${locale}/about`;
-
   const navLinks = [
-    { href: collectionHref, label: messages.nav.collection },
-    { href: aboutHref, label: messages.nav.about },
+    { href: `/${locale}/agents`, label: messages.nav.agents },
+    { href: `/${locale}/skills`, label: messages.nav.skills },
+    { href: `/${locale}/commands`, label: messages.nav.commands },
+    { href: `/${locale}/about`, label: messages.nav.about },
   ];
 
   return (
