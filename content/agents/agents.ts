@@ -15,6 +15,7 @@ export const agents: AgentCard[] = [
       "Avant un lancement, après un refactor UI, ou quand tu sens que quelque chose cloche mais tu ne sais pas quoi.",
     example:
       "Analyse l'UX de ma page d'accueil et identifie les 5 points de friction prioritaires.",
+    tags: ['ergonomy', 'accessibility', 'interface', 'figma', 'redesign', 'ux-audit'],
     install: `# Ajoute Lino dans ton projet Claude\ncurl -O https://raw.githubusercontent.com/you/claude-index/main/agents/lino.md\n# Puis place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/lino.md",
   },
@@ -32,6 +33,7 @@ export const agents: AgentCard[] = [
       "Quand tu crées une nouvelle table, quand tu ouvres une API publique, ou quand tu touches à l'auth.",
     example:
       "Conçois le schéma Postgres et les politiques RLS pour un système de commentaires multi-tenant.",
+    tags: ['api', 'database', 'architecture', 'rust', 'supabase', 'postgres'],
     install: `curl -O https://raw.githubusercontent.com/you/claude-index/main/agents/theo.md\n# Place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/theo.md",
   },
@@ -49,6 +51,7 @@ export const agents: AgentCard[] = [
       "Avant un push important, quand tu touches à l'auth ou aux politiques RLS, ou après un refactor sensible.",
     example:
       "Audite mes politiques RLS sur la table `profiles` et identifie les vecteurs d'escalade de privilèges.",
+    tags: ['auth', 'rls', 'secrets', 'vulnerability', 'audit', 'owasp'],
     install: `curl -O https://raw.githubusercontent.com/you/claude-index/main/agents/maya.md\n# Place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/maya.md",
   },
@@ -66,6 +69,7 @@ export const agents: AgentCard[] = [
       "Pour tout composant UI : formulaires, cards, navigation, modals, animations. Il est rapide sur l'exécution évidente.",
     example:
       "Crée un composant Card responsive avec un hover effect et un état focus accessible.",
+    tags: ['react', 'nextjs', 'tailwind', 'css', 'components', 'responsive'],
     install: `curl -O https://raw.githubusercontent.com/you/claude-index/main/agents/sami.md\n# Place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/sami.md",
   },
@@ -83,6 +87,7 @@ export const agents: AgentCard[] = [
       "Après avoir écrit une feature non triviale, avant de merger, ou quand tu as le sentiment que le code fonctionne mais manque de clarté.",
     example:
       "Relis ce composant React et identifie les risques de re-render inutile et les props mal typées.",
+    tags: ['code-review', 'testing', 'coverage', 'refactor', 'standards'],
     install: `curl -O https://raw.githubusercontent.com/you/claude-index/main/agents/raf.md\n# Place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/raf.md",
   },
@@ -100,6 +105,7 @@ export const agents: AgentCard[] = [
       "Dès qu'une librairie ou un framework est en jeu — même ceux que tu crois connaître. Les docs changent plus vite que la mémoire.",
     example:
       "Trouve la documentation de next-intl pour le routing App Router et montre-moi comment configurer les locales.",
+    tags: ['documentation', 'research', 'readme', 'mdx', 'context7'],
     install: `curl -O https://raw.githubusercontent.com/you/claude-index/main/agents/doc.md\n# Place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/doc.md",
   },
@@ -117,6 +123,7 @@ export const agents: AgentCard[] = [
       "Sur des projets impliquant plusieurs domaines simultanément (frontend + backend + sécurité + docs), ou quand une feature touche à l'architecture globale.",
     example:
       "Orchestre la mise en place d'un système d'authentification complet : schéma Supabase, RLS, composants UI, tests.",
+    tags: ['multi-agent', 'coordination', 'planning', 'architecture', 'workflows'],
     install: `curl -O https://raw.githubusercontent.com/you/claude-index/main/agents/orion.md\n# Place le fichier dans ~/.claude/agents/`,
     github: "https://github.com/you/claude-index/blob/main/agents/orion.md",
   },

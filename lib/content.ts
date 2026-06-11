@@ -77,8 +77,11 @@ export function getAdjacentCards(
   };
 }
 
-export const GLOBAL_INSTALL = `# Installer l'environnement complet
-npx claude-index install --all
+export const GLOBAL_INSTALL = `# Cloner et installer
+git clone https://github.com/Vincent-0212/l-index && cd l-index
 
-# Ou individuellement
-npx claude-index install lino theo maya sami`;
+# Agents (vers ~/.claude/agents/)
+for f in content/agents/*.md; do cp "$f" ~/.claude/agents/; done
+
+# Skills (vers ~/.claude/skills/)
+cp -r content/skills/* ~/.claude/skills/`;
