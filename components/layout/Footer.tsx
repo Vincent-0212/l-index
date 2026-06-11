@@ -5,29 +5,70 @@ interface FooterProps {
 }
 
 export function Footer({ locale }: FooterProps) {
+  const navLinks = [
+    { href: `/${locale}/collection`, label: "Collection" },
+    { href: `/${locale}/about`, label: "À propos" },
+  ];
+
   return (
-    <footer className="mt-auto border-t border-[var(--color-border)] py-8 px-4">
-      <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-ink-faint)]">
-        <p>
-          <span style={{ fontFamily: "var(--font-display)" }} className="text-[var(--color-ink-muted)]">
-            L&apos;Index
-          </span>
-          {" "}· Catalogue de plugins Claude
-        </p>
-        <nav className="flex items-center gap-4">
-          <Link
-            href={`/${locale}/collection`}
-            className="hover:text-[var(--color-ink-muted)] transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-1 rounded-sm"
-          >
-            Collection
-          </Link>
-          <Link
-            href={`/${locale}/about`}
-            className="hover:text-[var(--color-ink-muted)] transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-1 rounded-sm"
-          >
-            À propos
-          </Link>
-        </nav>
+    <footer
+      className="mt-auto"
+      style={{
+        borderTop: "1px solid var(--color-border)",
+        backgroundColor: "var(--color-surface)",
+        paddingTop: "48px",
+        paddingBottom: "32px",
+      }}
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
+          {/* Brand */}
+          <div className="flex flex-col gap-1.5">
+            <span
+              className="text-[15px] font-bold"
+              style={{
+                fontFamily: "var(--font-display)",
+                color: "var(--color-text)",
+              }}
+            >
+              L&apos;Index
+            </span>
+            <p className="text-[13px]" style={{ color: "var(--color-text-faint)" }}>
+              Catalogue de plugins Claude
+            </p>
+          </div>
+
+          {/* Nav links */}
+          <nav className="flex items-center gap-6" aria-label="Liens de pied de page">
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-[13px] transition-colors duration-150 rounded-[var(--radius-sm)] focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-1"
+                style={{ color: "var(--color-text-faint)" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--color-text-muted)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--color-text-faint)")
+                }
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* Copyright */}
+        <div
+          className="mt-10 pt-6 text-[12px]"
+          style={{
+            borderTop: "1px solid var(--color-border)",
+            color: "var(--color-text-faint)",
+          }}
+        >
+          © {new Date().getFullYear()} L&apos;Index
+        </div>
       </div>
     </footer>
   );

@@ -18,7 +18,15 @@ export function LangSwitcher({ locale }: LangSwitcherProps) {
   }
 
   return (
-    <div className="flex items-center gap-0.5 rounded-[var(--radius-sm)] bg-[var(--color-surface-2)] p-0.5" role="group" aria-label="Langue">
+    <div
+      className="flex items-center gap-0.5 p-0.5"
+      style={{
+        backgroundColor: "var(--color-surface-2)",
+        borderRadius: "var(--radius-sm)",
+      }}
+      role="group"
+      aria-label="Langue"
+    >
       {(["fr", "en"] as const).map((lang) => (
         <button
           key={lang}
@@ -26,11 +34,19 @@ export function LangSwitcher({ locale }: LangSwitcherProps) {
           aria-pressed={locale === lang}
           className={cn(
             "rounded-[4px] px-2 py-1 text-xs font-medium transition-all duration-150 uppercase cursor-pointer",
-            "focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-1",
-            locale === lang
-              ? "bg-[var(--color-surface-0)] text-[var(--color-ink)] shadow-sm"
-              : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
+            "focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-1"
           )}
+          style={
+            locale === lang
+              ? {
+                  backgroundColor: "var(--color-surface-3)",
+                  color: "var(--color-text)",
+                  boxShadow: "var(--shadow-1)",
+                }
+              : {
+                  color: "var(--color-text-muted)",
+                }
+          }
         >
           {lang}
         </button>
