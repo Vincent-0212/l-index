@@ -11,6 +11,7 @@ export const commands: CommandCard[] = [
     usage: "/code-review",
     effect:
       "Lance un audit du code présent dans le contexte : bugs potentiels, types insuffisants, complexité injustifiée, nommage flou, opportunités de simplification. Classe les problèmes par sévérité (critique / mineur / suggestion). Ne modifie rien sans ton accord.",
+    tags: ["review", "quality", "bugs", "diff", "security"],
   },
   {
     type: "command",
@@ -22,6 +23,7 @@ export const commands: CommandCard[] = [
     usage: "/run",
     effect:
       "Exécute le serveur de dev (ou la commande de build appropriée), capture les erreurs dans la console, et rapporte ce qui se passe. Utile pour valider qu'un fix fonctionne sans avoir à basculer manuellement sur le terminal.",
+    tags: ["execution", "test", "dev-server", "launch"],
   },
   {
     type: "command",
@@ -33,5 +35,6 @@ export const commands: CommandCard[] = [
     usage: "/clear",
     effect:
       "Réinitialise la fenêtre de contexte. Évite la contamination de contexte entre deux features distinctes — un problème fréquent qui dégrade la qualité des réponses quand le contexte s'accumule. À utiliser entre chaque tâche sans rapport direct.",
+    tags: ["context", "memory", "reset", "cleanup"],
   },
 ];

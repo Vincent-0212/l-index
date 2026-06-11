@@ -12,6 +12,7 @@ export const skills: SkillCard[] = [
       "Avant tout build frontend d'envergure : landing, portfolio, redesign, vitrine. Déclenché par 'direction artistique', 'DA', ou mention d'un projet visuel ambitieux.",
     effect:
       "Force une phase de réflexion créative avant l'exécution. Produit un contrat visuel (concept, références, anti-patterns, système typographie + couleurs + motion) que l'implémentation doit respecter à la lettre.",
+    tags: ['design', 'direction-artistique', 'landing', 'ux', 'visual-identity'],
     install: `# Dans ton fichier CLAUDE.md ou projet\n# Active ce skill en ajoutant dans les instructions :\n# 'Applique le skill art-direction avant tout projet visuel.'`,
     github: "https://github.com/you/claude-index/blob/main/skills/art-direction.md",
   },
@@ -26,6 +27,7 @@ export const skills: SkillCard[] = [
       "Toujours actif sur tout code livré. Aucun déclencheur spécifique requis — il s'applique en permanence dès que du code est produit.",
     effect:
       "Supprime les placeholders, les stubs incomplets et les commentaires de type 'à compléter'. Chaque fonction est implémentée, chaque composant est complet, chaque fichier est prêt pour la production.",
+    tags: ['output', 'placeholder', 'complete-code', 'quality'],
     install: `# Dans ton CLAUDE.md :\n# 'full-output-enforcement est TOUJOURS actif : zéro placeholder, zéro // ..., zéro TODO.'`,
     github:
       "https://github.com/you/claude-index/blob/main/skills/full-output-enforcement.md",
@@ -41,6 +43,7 @@ export const skills: SkillCard[] = [
       "Dès que de l'UI est produit. Cumulable avec tout style design actif (design-taste-frontend, advanced-app-design, 3d-web-experience).",
     effect:
       "Ajoute une couche de polish à chaque composant : hover states, focus rings visibles, transitions calibrées (120–200ms), icônes cohérentes, contrastes AA, et micro-interactions qui renforcent le feedback sans surcharger.",
+    tags: ['animation', 'micro-interactions', 'accessibility', 'polish', 'ux'],
     install: `# Dans ton CLAUDE.md :\n# 'interface-craft est actif dès que de l'UI est produit.'`,
     github:
       "https://github.com/you/claude-index/blob/main/skills/interface-craft.md",

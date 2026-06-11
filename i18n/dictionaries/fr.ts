@@ -1,13 +1,44 @@
 const fr = {
   nav: {
-    collection: "Collection",
-    about: "À propos",
     home: "Accueil",
+    agents: "Agents",
+    skills: "Skills",
+    commands: "Commandes",
+    about: "À propos",
+    collection: "Collection",
+  },
+  theme: {
+    toggle: "Changer le thème",
+    light: "Clair",
+    dark: "Sombre",
+  },
+  palette: {
+    placeholder: "Rechercher agents, skills, commandes...",
+    noResults: "Aucun résultat",
+    hint: "Naviguer",
+    open: "Ouvrir la palette",
+    pressHint: "Appuyer sur ⌘K",
   },
   hero: {
     tagline: "Tes outils Claude. Organisés, documentés, prêts à l'emploi.",
     cta: "Ouvrir la collection",
     label: "Orchestration",
+  },
+  landing: {
+    hero: {
+      title: "Ton environnement Claude, enfin organisé.",
+      subtitle: "Agents spécialisés, skills précis, commandes rapides — un catalogue complet pour tirer le maximum de Claude au quotidien.",
+      cta: "Parcourir la collection",
+      terminal: "npx claude-index install --all",
+      installHint: "Installer tout l'environnement en une commande",
+    },
+    features: {
+      title: "Tout ce qu'il te faut, en un seul endroit",
+      agents: "Des agents avec une personnalité et un rôle clair — tu sais exactement qui appeler.",
+      skills: "Des skills activables à la demande, qui changent le comportement de Claude en profondeur.",
+      commands: "Des commandes courtes pour les actions répétitives — moins de friction, plus de flow.",
+      disciplines: "Une taxonomie par discipline pour filtrer et trouver en moins de 10 secondes.",
+    },
   },
   collection: {
     title: "La collection",
@@ -46,6 +77,9 @@ const fr = {
     next: "Suivant",
     members: "Membres",
   },
+  tags: {
+    label: "Tags",
+  },
   empty: {
     title: "Aucun plugin trouvé",
     desc: "Essaie d'ajuster tes filtres ou ta recherche.",
@@ -76,7 +110,7 @@ const fr = {
     whyTitle: "Pourquoi ce site ?",
     whyBody: "Les plugins Claude sont puissants mais invisibles : mal documentés, dispersés, difficiles à découvrir. L'Index les rend visibles. Chaque plugin a une identité forte (nom, rôle, couleur de discipline), une fiche lisible, et un bloc d'action direct. Tu trouves en moins de 10 secondes. Tu installes en 1 clic.",
     stackTitle: "La stack",
-    stackBody: "Next.js 15 · TypeScript strict · Tailwind v4 · Motion · next-intl.",
+    stackBody: "Next.js 16 · TypeScript strict · Tailwind v4 · Motion · next-intl.",
   },
   breadcrumb: {
     collection: "Collection",

@@ -14,6 +14,7 @@ export type AgentCard = {
   install?: string;
   download?: string;
   github?: string;
+  tags?: string[];
 };
 
 export type SkillCard = {
@@ -27,6 +28,7 @@ export type SkillCard = {
   install?: string;
   download?: string;
   github?: string;
+  tags?: string[];
 };
 
 export type CommandCard = {
@@ -37,6 +39,9 @@ export type CommandCard = {
   summary: string;
   usage: string;
   effect: string;
+  install?: string;
+  github?: string;
+  tags?: string[];
 };
 
 export type TeamCard = {

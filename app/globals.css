@@ -1,69 +1,6 @@
 @import "tailwindcss";
 
-@theme {
-  /* Surfaces */
-  --color-surface-0: #0e0e11;
-  --color-surface-1: #141418;
-  --color-surface-2: #1c1c22;
-  --color-border: #2a2a35;
-
-  /* Encre */
-  --color-ink: #ececee;
-  --color-ink-muted: #888894;
-  --color-ink-faint: #4a4a58;
-
-  /* Accent */
-  --color-accent: #f5a623;
-  --color-accent-dim: rgba(245, 166, 35, 0.15);
-
-  /* Classes — couleur principale */
-  --color-class-frontend: #f5a623;
-  --color-class-backend: #3b82f6;
-  --color-class-security: #22c55e;
-  --color-class-debug: #9ca3af;
-  --color-class-design: #ec4899;
-  --color-class-data: #06b6d4;
-  --color-class-devops: #8b5cf6;
-  --color-class-product: #fb7185;
-  --color-class-quality: #a3e635;
-  --color-class-docs: #d6b98c;
-
-  /* Typographie */
-  --font-display: "Clash Display", sans-serif;
-  --font-body: "Satoshi", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-
-  /* Échelle type (modular ×1.25) */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 1.563rem;
-  --font-size-2xl: 1.953rem;
-  --font-size-3xl: 2.441rem;
-  --font-size-4xl: 3.052rem;
-  --font-size-5xl: 3.815rem;
-
-  /* Radius */
-  --radius-card: 12px;
-  --radius-sm: 6px;
-  --radius-lg: 16px;
-
-  /* Ombres */
-  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-glow-accent: 0 0 20px rgba(245, 166, 35, 0.25);
-}
-
-/* Fonts self-hosted */
-@font-face {
-  font-family: "Clash Display";
-  src: url("/fonts/ClashDisplay-Variable.woff2") format("woff2");
-  font-weight: 200 700;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* ─── @font-face : Satoshi uniquement ─── */
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
@@ -72,7 +9,101 @@
   font-display: swap;
 }
 
-/* Base reset */
+/* ─── Tailwind v4 @theme — valeurs dark statiques (défaut) ─── */
+@theme {
+  /* Surfaces */
+  --color-bg:            #17150F;
+  --color-surface:       #1F1C15;
+  --color-surface-2:     #272318;
+  --color-surface-3:     #2E2A1E;
+  --color-border:        #3A3629;
+  --color-border-strong: #4A4636;
+
+  /* Texte */
+  --color-text:          #ECE7DB;
+  --color-text-muted:    #A8A192;
+  --color-text-faint:    #6B6356;
+
+  /* Accent */
+  --color-accent:        #E3A84A;
+  --color-accent-hover:  #EDB860;
+  --color-accent-fg:     #17150F;
+
+  /* Couleurs de classe */
+  --color-class-frontend:      #F97316;
+  --color-class-backend:       #3B82F6;
+  --color-class-security:      #22C55E;
+  --color-class-debug:         #9CA3AF;
+  --color-class-design:        #EC4899;
+  --color-class-data:          #06B6D4;
+  --color-class-devops:        #8B5CF6;
+  --color-class-product:       #FB7185;
+  --color-class-quality:       #A3E635;
+  --color-class-docs:          #D6B98C;
+  --color-class-orchestration: #A78BFA;
+
+  /* Typographie — Satoshi partout */
+  --font-display: "Satoshi", system-ui, sans-serif;
+  --font-body:    "Satoshi", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  /* Échelle type (modular ×1.25) */
+  --font-size-xs:   0.75rem;
+  --font-size-sm:   0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg:   1.25rem;
+  --font-size-xl:   1.563rem;
+  --font-size-2xl:  1.953rem;
+  --font-size-3xl:  2.441rem;
+  --font-size-4xl:  3.052rem;
+  --font-size-5xl:  3.815rem;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-full: 9999px;
+}
+
+/* ─── Tokens dynamiques — DARK (défaut, sync avec @theme) ─── */
+:root {
+  --color-bg:            #17150F;
+  --color-surface:       #1F1C15;
+  --color-surface-2:     #272318;
+  --color-surface-3:     #2E2A1E;
+  --color-border:        #3A3629;
+  --color-border-strong: #4A4636;
+  --color-text:          #ECE7DB;
+  --color-text-muted:    #A8A192;
+  --color-text-faint:    #6B6356;
+  --color-accent:        #E3A84A;
+  --color-accent-hover:  #EDB860;
+  --color-accent-fg:     #17150F;
+  --color-ring:          rgba(227, 168, 74, 0.35);
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-2: 0 4px 20px rgba(0, 0, 0, 0.55);
+}
+
+/* ─── Tokens dynamiques — LIGHT ─── */
+:root[data-mode="light"] {
+  --color-bg:            #F4EFE6;
+  --color-surface:       #FBF8F2;
+  --color-surface-2:     #FFFFFF;
+  --color-surface-3:     #EDE8DE;
+  --color-border:        #DDD7CC;
+  --color-border-strong: #C8C0B4;
+  --color-text:          #2A2620;
+  --color-text-muted:    #6B6356;
+  --color-text-faint:    #9A9286;
+  --color-accent:        #C2660C;
+  --color-accent-hover:  #A8570A;
+  --color-accent-fg:     #FFFFFF;
+  --color-ring:          rgba(194, 102, 12, 0.3);
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ─── Reset & base ─── */
 *,
 *::before,
 *::after {
@@ -86,18 +117,16 @@ html {
 }
 
 body {
-  background-color: var(--color-surface-0);
-  color: var(--color-ink);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
-  min-height: 100dvh;
+  margin: 0;
 }
 
-/* Focus styles visibles — jamais outline: none sans alternative */
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
 }
 
 /* Scrollbar subtile */
@@ -106,47 +135,12 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-surface-0);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: var(--color-border-strong);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-ink-faint);
-}
-
-/* Légendaire : animation prismatique en boucle */
-@keyframes prismatic {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-prismatic {
-  background: linear-gradient(
-    135deg,
-    #f5a623,
-    #ec4899,
-    #8b5cf6,
-    #06b6d4,
-    #22c55e,
-    #f5a623
-  );
-  background-size: 300% 300%;
-  animation: prismatic 4s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-prismatic {
-    animation: none;
-    background: linear-gradient(135deg, #f5a623, #8b5cf6);
-    background-size: 100% 100%;
-  }
+  background: var(--color-text-faint);
 }

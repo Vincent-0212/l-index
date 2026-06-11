@@ -1,18 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Layers, Server, Shield, Bug, Palette, Brain,
-  GitBranch, Compass, CheckCircle, BookOpen, Network,
-  type LucideIcon,
-} from "lucide-react";
-import { CLASS_MAP } from "@/lib/classes";
+import { CLASS_MAP, getClassIcon } from "@/lib/classes";
 import { cn } from "@/lib/utils";
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Layers, Server, Shield, Bug, Palette, Brain,
-  GitBranch, Compass, CheckCircle, BookOpen, Network,
-};
 
 interface ClassLegendProps {
   descriptions: Record<string, string>;
@@ -23,21 +13,31 @@ export function ClassLegend({ descriptions }: ClassLegendProps) {
 
   return (
     <div className="flex flex-col divide-y divide-[var(--color-border)]">
-      {(Object.entries(CLASS_MAP) as [string, { label: string; color: string; icon: string }][]).map(([key, info]) => {
-        const color = info.color === "prismatic" ? "#a78bfa" : info.color;
-        const Icon = ICON_MAP[info.icon] ?? Network;
+      {(
+        Object.entries(CLASS_MAP) as [
+          string,
+          { label: string; color: string; icon: string }
+        ][]
+      ).map(([key, info]) => {
+        const color = info.color;
+        const Icon = getClassIcon(key as Parameters<typeof getClassIcon>[0]);
         const isHovered = hovered === key;
 
         return (
           <div
             key={key}
             className={cn(
-              "flex items-center gap-4 px-4 py-3.5 transition-all duration-200 cursor-default rounded-sm",
-              isHovered ? "bg-[var(--color-surface-1)]" : "bg-transparent"
+              "flex items-center gap-4 px-4 py-3.5 transition-all duration-200 cursor-default rounded-sm"
             )}
+            style={{
+              backgroundColor: isHovered
+                ? "var(--color-surface-2)"
+                : "transparent",
+            }}
             onMouseEnter={() => setHovered(key)}
             onMouseLeave={() => setHovered(null)}
           >
+            {/* Icon chip */}
             <div
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all duration-200"
               style={{
@@ -48,14 +48,21 @@ export function ClassLegend({ descriptions }: ClassLegendProps) {
             >
               <Icon size={16} style={{ color }} strokeWidth={1.5} />
             </div>
+
+            {/* Label + description */}
             <div className="flex items-center gap-3 flex-1 min-w-0">
               <span
                 className="text-sm font-medium whitespace-nowrap transition-colors duration-200"
-                style={{ color: isHovered ? color : "var(--color-ink)" }}
+                style={{
+                  color: isHovered ? color : "var(--color-text)",
+                }}
               >
                 {info.label}
               </span>
-              <span className="text-xs text-[var(--color-ink-faint)] truncate hidden sm:block">
+              <span
+                className="text-xs truncate hidden sm:block"
+                style={{ color: "var(--color-text-faint)" }}
+              >
                 {descriptions[key] ?? ""}
               </span>
             </div>

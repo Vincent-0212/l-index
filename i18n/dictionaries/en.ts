@@ -1,13 +1,44 @@
 const en = {
   nav: {
-    collection: "Collection",
-    about: "About",
     home: "Home",
+    agents: "Agents",
+    skills: "Skills",
+    commands: "Commands",
+    about: "About",
+    collection: "Collection",
+  },
+  theme: {
+    toggle: "Toggle theme",
+    light: "Light",
+    dark: "Dark",
+  },
+  palette: {
+    placeholder: "Search agents, skills, commands...",
+    noResults: "No results",
+    hint: "Navigate",
+    open: "Open palette",
+    pressHint: "Press ⌘K",
   },
   hero: {
     tagline: "Your Claude plugins. Organized, documented, ready to use.",
     cta: "Browse the collection",
     label: "Orchestration",
+  },
+  landing: {
+    hero: {
+      title: "Your Claude environment, finally organized.",
+      subtitle: "Specialized agents, precise skills, quick commands — a complete catalogue to get the most out of Claude every day.",
+      cta: "Browse the collection",
+      terminal: "npx claude-index install --all",
+      installHint: "Install the full environment in one command",
+    },
+    features: {
+      title: "Everything you need, in one place",
+      agents: "Agents with a clear personality and role — you know exactly who to call.",
+      skills: "On-demand skills that deeply change how Claude behaves.",
+      commands: "Short commands for repetitive actions — less friction, more flow.",
+      disciplines: "A discipline taxonomy to filter and find in under 10 seconds.",
+    },
   },
   collection: {
     title: "The collection",
@@ -46,6 +77,9 @@ const en = {
     next: "Next",
     members: "Members",
   },
+  tags: {
+    label: "Tags",
+  },
   empty: {
     title: "No plugins found",
     desc: "Try adjusting your filters or search query.",
@@ -76,7 +110,7 @@ const en = {
     whyTitle: "Why this site?",
     whyBody: "Claude plugins are powerful but invisible: poorly documented, scattered, hard to discover. L'Index makes them visible. Each plugin has a strong identity (name, role, discipline color), a readable card, and a direct action block. Find in under 10 seconds. Install in 1 click.",
     stackTitle: "The stack",
-    stackBody: "Next.js 15 · TypeScript strict · Tailwind v4 · Motion · next-intl.",
+    stackBody: "Next.js 16 · TypeScript strict · Tailwind v4 · Motion · next-intl.",
   },
   breadcrumb: {
     collection: "Collection",
